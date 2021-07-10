@@ -1,0 +1,1 @@
+<p>Blogs Page</p>
