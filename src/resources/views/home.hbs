@@ -1,1 +1,13 @@
-<p>Home Content</p>
+<div class="mt-4">
+    <div class="row">
+        {{#each posts}}
+        <div class="card card-post-item">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.body}}</p>
+                <a href="#" class="btn btn-primary">View Post</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

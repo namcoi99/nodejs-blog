@@ -1,12 +1,12 @@
-const blogsRouter = require('./blogs.route')
-const siteRouter = require('./site.route')
-const signinRouter = require('./signin.route')
+const blogsRouter = require('./blogs')
+const siteRouter = require('./site')
+const signinRouter = require('./signin')
 
 function route(app) {
     app.use('/blogs', blogsRouter)
-    app.get('/signin', signinRouter)
+    app.use('/signin', signinRouter)
 
-    app.get('/', siteRouter)
+    app.use('/', siteRouter)
 
 }
 
