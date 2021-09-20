@@ -1,5 +1,5 @@
 class SignInController {
-    // [GET] /blogs
+    // [GET] /signin
     index(req, res) {
         res.render('signin')
     }

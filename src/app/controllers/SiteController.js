@@ -2,7 +2,7 @@ const Post = require('../models/BlogPost');
 const { multipleMongooseToObject } = require('../../util/mongoose');
 
 class SiteController {
-    // [GET] /blogs
+    // [GET] /
     index(req, res, next) {
         Post.find({})
             .then(posts => {

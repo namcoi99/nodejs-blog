@@ -1,19 +1,29 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
+const slug = require('mongoose-slug-generator');
+
+mongoose.plugin(slug);
 
 const Post = new Schema({
-  author: ObjectId,
-  title: String,
-  body: String,
-  createdAt: {
-    type: Date,
-    default: Date.now(),
+  author: {
+    type: String,
+    required: true
   },
-  updatedAt: {
-    type: Date,
-    default: Date.now(),
-  }
+  title: {
+    type: String,
+    required: true
+  },
+  content: {
+    type: String,
+    required: true
+  },
+  slug: {
+    type: String,
+    slug: 'title',
+    unique: true
+  },
+}, {
+  timestamps: true,
 });
 
 module.exports = mongoose.model('Post', Post);
