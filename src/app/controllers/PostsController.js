@@ -25,8 +25,24 @@ class PostsController {
         newPost.save()
             .then(() => res.redirect(`/`))
             .catch(err => {
-                
+                next(err)
             });
+    }
+
+    // [GET] /posts/:id/edit
+    edit(req, res, next) {
+        Post.findById(req.params.id)
+            .then(post => res.render('posts/edit', {
+                post: mongooseToObject(post)
+            }))
+            .catch(err => next(err))
+    }
+
+    // [PUT] /posts/:id
+    update(req, res, next) {
+        Post.updateOne({_id: req.params.id}, req.body)
+            .then(() => res.redirect('/me/posts'))
+            .catch(err => next(err))
     }
 }
 

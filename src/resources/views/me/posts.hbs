@@ -1,0 +1,26 @@
+<div class="mt-4">
+    <h2>My Blogs</h2>
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Created</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each posts}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.title}}</td>
+                <td>{{this.createdAt}}</td>
+                <td>
+                    <a href="/posts/{{this._id}}/edit" class="btn btn-link">Update</a>
+                    <a href="#" class="btn btn-link">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

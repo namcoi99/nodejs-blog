@@ -3,9 +3,9 @@ const router = express.Router();
 const postsController = require('../app/controllers/PostsController')
 
 router.get('/create', postsController.create)
-
-router.get('/:slug', postsController.show)
-
 router.post('/store', postsController.store)
+router.get('/:id/edit', postsController.edit)
+router.put('/:id', postsController.update)
+router.get('/:slug', postsController.show)
 
 module.exports = router;
