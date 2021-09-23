@@ -7,20 +7,21 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         Nam Nguyen
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {{!-- <a class="dropdown-item" href="/signin">Sign In</a> --}}
-                        <a class="dropdown-item" href="/posts/create">Create Blog</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/me/posts">My Blogs</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Log out</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/posts/create">Create Blog</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/me/posts">My Blogs</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Log out</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>

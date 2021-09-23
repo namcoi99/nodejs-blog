@@ -40,8 +40,15 @@ class PostsController {
 
     // [PUT] /posts/:id
     update(req, res, next) {
-        Post.updateOne({_id: req.params.id}, req.body)
+        Post.updateOne({ _id: req.params.id }, req.body)
             .then(() => res.redirect('/me/posts'))
+            .catch(err => next(err))
+    }
+
+    // [DELETE] /posts/:id
+    delete(req, res, next) {
+        Post.deleteOne({ _id: req.params.id })
+            .then(() => res.redirect('back'))
             .catch(err => next(err))
     }
 }
